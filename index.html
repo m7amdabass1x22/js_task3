@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <link rel="stylesheet" href="./index.css">
+    
+</head>
+<body class="bg-dark d-flex align-items-center flex-column " style="height: 100vh;">
+    <div class="bg-black p-4 shadow col-6 rounded d-flex flex-column gap-3 text-light">
+        <h1>add New Item</h1>
+        <input id="itemName" class="form-control text-dark " style="background-color: #858383;" type="text" placeholder="enter New item Name">
+        <input id="itemPrice" class="form-control text-dark " style="background-color: #858383;" type="number" placeholder="enter New item Price">
+        <input id="itemQty" class="form-control text-dark " style="background-color: #858383;" type="number" placeholder="enter New item Qty">
+        <button onclick="addNewitem()" class="btn btn-primary">Add Item</button>
+    </div>
+    <table class="table table-dark table-hover table-bordered text-white ">
+<thead >
+    <tr>
+        <th>item No</th>
+        <th>item name</th>
+        <th>item price</th>
+        <th>item Qty</th>
+        <th>item Total</th>
+        <th>Actions</th>
+        <th>statue</th>
+    </tr>
+</thead>
+<tbody> </tbody>
+</table>
+    <script src="./index.js"></script>
+</body>
+</html>
