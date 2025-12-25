@@ -1,17 +1,17 @@
-let items = [
-{name: "iphone X", Price: 200, Qty: 5, Total: (1000)},
-{name: "iphone 11", Price: 300, Qty: 3, Total: (900)},
-{name: "iphine 12", Price: 350, Qty: 4, Total: (1400)},
-];
+let items = JSON.parse(localStorage.getItem(`items`));
+
+
 let tbody = document.querySelector(`tbody`);
  let itemName = document.querySelector(`#itemName`)
 let itemPrice = document.querySelector(`#itemPrice`)
 let itemQty = document.querySelector(`#itemQty`)
 
 let showdata = () => {
+    
     tbody.innerHTML = ``;
+    
     items.forEach ((el, index) =>{
-    tbody.innerHTML += `
+     tbody.innerHTML += `
     <tr>
     <td>${index+1}</td>
     <td>${el.name}</td>
@@ -63,6 +63,9 @@ let newItemOpj = {
 
 
     items.push(newItemOpj);
+    let JSONphone = JSON.stringify(items);
+localStorage.setItem(`items`,JSONphone)
+
     showdata();
 
 
@@ -72,8 +75,12 @@ let newItemOpj = {
 
 let deleteItem = (index) => {
     let confirmDel = confirm(`are you sure to delete ${items[index].name}?`);
+    
     if (confirmDel== true) {
     items.splice(index, 1);
+        let JSONphone = JSON.stringify(items);
+localStorage.setItem(`items`,JSONphone)
+
     showdata();
 }
 }
@@ -86,6 +93,9 @@ let confirmEdit =  confirm(`are you sure to edit ${items[index].name} ?`);
         items[index].name = newName;
         items[index].Price = newPrice;
         items[index].Qty = newQty;
+              let JSONphone = JSON.stringify(items);
+localStorage.setItem(`items`,JSONphone)
+
         showdata();
 }
 
